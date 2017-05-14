@@ -1,7 +1,7 @@
 <?php
 /*
 * Plugin Name: Facebook OpenGraph/OG Tags for Single Posts
-* Description: This plugin will put the Facebook Meta tags in your blog single posts which includes Title, URL, Description and Featured Image (If available) to display them on Facebook.
+* Description: This plugin includes the Facebook OG tags into your blog's single posts which include Blog Title, Post Title, Description and Featured Image (if available). If you're facing issues in the thumbnails while pasting your blog post link on Facebook, this plugin is must for you. 
 * Version: 1.0
 *Author: Zeeshan Ahmed
 */
