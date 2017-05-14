@@ -13,7 +13,7 @@ function opengraphsingle(){
 		echo '<meta property="og:title" content="',the_title(),'"/>';
 		echo '<meta property="og:description" content="',the_excerpt(),'"/>';
 		if(has_post_thumbnail()){
-			$image = wp_get_attachment_image_url( get_post_thumbnail_id(), 'full' );
+			$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 			echo '<meta property="og:image" content="',$image[0],'"/>';
 		}
 	}
