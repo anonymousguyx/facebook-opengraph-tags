@@ -3,7 +3,10 @@
 * Plugin Name: Facebook OpenGraph/OG Tags for Single Posts
 * Description: This plugin includes the Facebook OG tags into your blog's single posts which include Blog Title, Post Title, Description and Featured Image (if available). If you're facing issues in the thumbnails while pasting your blog post link on Facebook, this plugin is must for you. 
 * Version: 1.0
-*Author: Zeeshan Ahmed
+* Plugin URI: https://github.com/anonymousguyx/facebook-opengraph-tags
+* Author: Zeeshan Ahmed
+* Author URI: http://www.fiverr.com/zeeshanx
+* 
 */
 
 // Header Scripts
@@ -38,15 +41,24 @@ function opengraph_options(){
 
 function opengraphsingle_menu_page(){ ?>
 	<div class="wrap">
-		<h1> Facebook OG Tags Settings </h1>
-		<form action="options.php" method="post">
+		<form class="ogdata" action="options.php" method="post">
+		<h1 class="ogtitle"> Facebook OG Tags Settings </h1>
 		<?php settings_fields( 'meta-data' ); ?>
 		<?php do_settings_sections( 'opengraphsingle_menu' ); ?>
-		<label> Default Image URL </label>
+		<h3> Default Image URL </h3>
+		<p class="ogpara">If a single posts doesn't contain any featured image then this image will be used as a featured image.</p>
 		<input type="text" name="default-image" value="<?php echo esc_attr( get_option( 'default-image' )); ?>">
 		<?php submit_button(); ?>
 		</form>
 	</div>
 	<?php
-	}
-	?>
+}
+
+// Load Styles
+function load_styles(){
+	wp_register_style( 'ogstyles', plugin_dir_url( __FILE__ ) . 'assets/css/style.css', false, 'v.1.0' );
+	wp_enqueue_style( 'ogstyles' );
+}
+add_action( 'admin_enqueue_scripts', 'load_styles' );
+
+?>
