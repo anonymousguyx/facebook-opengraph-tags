@@ -12,11 +12,15 @@
 // Header Scripts
 add_action('wp_head', 'opengraphsingle');
 function opengraphsingle(){
-	if (is_single()) {
-		echo '<meta property="og:site_name" content="',bloginfo('name'),'/>';
+	if ( is_single() ) {
+		echo '<meta property="og:site_name" content="',bloginfo('name'),'"/>';
 		echo '<meta property="og:url" content="',the_permalink(),'"/>';
 		echo '<meta property="og:title" content="',the_title(),'"/>';
-		echo '<meta property="og:description" content="',the_excerpt(),'"/>';
+		if( has_excerpt() ){ 
+			echo '<meta property="og:description" content="',get_the_excerpt(),'"/>';
+		} else {
+			echo '<meta property="og:description" content="',get_the_content(),'"/>';
+		}
 		if(has_post_thumbnail()){
 			$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 			echo '<meta property="og:image" content="',$image[0],'"/>';
@@ -41,8 +45,8 @@ function opengraph_options(){
 
 function opengraphsingle_menu_page(){ ?>
 	<div class="wrap">
-		<form class="ogdata" action="options.php" method="post">
 		<h1 class="ogtitle"> Facebook OG Tags Settings </h1>
+		<form class="ogdata" action="options.php" method="post">
 		<?php settings_fields( 'meta-data' ); ?>
 		<?php do_settings_sections( 'opengraphsingle_menu' ); ?>
 		<h3> Default Image URL </h3>
