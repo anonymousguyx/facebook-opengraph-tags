@@ -1,6 +1,6 @@
 === Facebook OpenGraph/OG Tags for Single Posts ===
 Plugin Name: Facebook OpenGraph/OG Tags for Single Posts
-Version: 1.2
+Version: 1.3
 Plugin URI: https://github.com/anonymousguyx/facebook-opengraph-tags
 Tags: facebook, og tags, facebook meta
 Author: Zeeshan Ahmed
