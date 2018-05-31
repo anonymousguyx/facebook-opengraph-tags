@@ -2,7 +2,7 @@
 /*
 * Plugin Name: Facebook OpenGraph/OG Tags for Single Posts
 * Description: This plugin includes the Facebook OG tags into your blog's single posts which include Blog Title, Post Title, Description and Featured Image (if available). If you're facing issues in the thumbnails while pasting your blog post link on Facebook, this plugin is must for you. 
-* Version: 1.0
+* Version: 1.3
 * Plugin URI: https://github.com/anonymousguyx/facebook-opengraph-tags
 * Author: Zeeshan Ahmed
 * Author URI: http://www.fiverr.com/zeeshanx
