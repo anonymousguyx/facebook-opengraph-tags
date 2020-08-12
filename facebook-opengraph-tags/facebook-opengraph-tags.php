@@ -16,11 +16,7 @@ function opengraphsingle(){
 		echo '<meta property="og:site_name" content="',bloginfo('name'),'"/>';
 		echo '<meta property="og:url" content="',the_permalink(),'"/>';
 		echo '<meta property="og:title" content="',the_title(),'"/>';
-		if( has_excerpt() ){ 
-			echo '<meta property="og:description" content="',get_the_excerpt(),'"/>';
-		} else {
-			echo '<meta property="og:description" content="',get_the_content(),'"/>';
-		}
+		echo '<meta property="og:description" content="',get_the_excerpt(),'"/>';
 		if(has_post_thumbnail()){
 			$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 			echo '<meta property="og:image" content="',$image[0],'"/>';
